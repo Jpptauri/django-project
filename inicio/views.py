@@ -2,6 +2,8 @@ from django.http import HttpResponse
 from django.template import Template, Context, loader
 from datetime import datetime
 from django.shortcuts import render
+from inicio.models import Auto
+
 def mi_vista(request):
     return HttpResponse('mi vista')
 
@@ -40,3 +42,8 @@ def segundo_template(request):
     
     #V3
     return render(request,'segundo_template.html',datos)
+
+def crear_auto(request,marca,modelo,anio):
+    auto = Auto(marca = marca,modelo = modelo,anio = anio)
+    auto.save()
+    return render(request,'crear_auto.html',{'auto':auto})

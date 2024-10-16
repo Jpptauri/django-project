@@ -1,5 +1,5 @@
 from django.urls import path
-from inicio.views import mi_vista, inicio, vista_datos1, primer_template,segundo_template
+from inicio.views import mi_vista, inicio, vista_datos1, primer_template,segundo_template,crear_auto
 
 urlpatterns = [
     path('mi-vista/', mi_vista),
@@ -7,6 +7,6 @@ urlpatterns = [
     path('vista-datos1/', vista_datos1),
     path('vista-datos1/<nombre>/', vista_datos1),
     path('primer_template/', primer_template),
-    path('segundo_template/', segundo_template)
-
+    path('segundo_template/', segundo_template),
+    path('crear-auto/<str:marca>/<str:modelo>/<int:anio>/',crear_auto)
 ]
