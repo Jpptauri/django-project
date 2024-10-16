@@ -8,8 +8,8 @@ def mi_vista(request):
     return HttpResponse('mi vista')
 
 def inicio(request):
-    return HttpResponse('<h1> inicio </h1>')
-
+    #return HttpResponse('<h1> inicio </h1>')
+    return render(request,'index.html')
 def vista_datos1(request,nombre):
     nombre_en_mayuscula = nombre.upper()
     return HttpResponse(f'hola {nombre_en_mayuscula}!!')
